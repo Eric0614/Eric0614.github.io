@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>耜稷生活農園｜台東鹿野 × 回歸土地的滋味</title>
+  <meta name="description" content="位於台東鹿野鄉的耜稷生活農園，以自然農法種植，邀您體驗花東縱谷的農耕生活、友善大地的真實滋味。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;700&family=Noto+Sans+TC:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --earth: #3d2b1f;
+      --clay: #7a4f35;
+      --wheat: #c4924a;
+      --straw: #e8d5a0;
+      --cream: #f5efe2;
+      --sage: #6b7f5e;
+      --moss: #3f5038;
+      --sky: #a8c4d4;
+      --fog: #e8eeec;
+      --white: #fefcf7;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans TC', sans-serif;
+      background: var(--white);
+      color: var(--earth);
+      overflow-x: hidden;
+    }
+
+    /* ── Nav ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(254, 252, 247, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(122, 79, 53, 0.12);
+    }
+    .nav-logo {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--earth);
+      letter-spacing: 0.12em;
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--sage); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      color: var(--clay);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--moss); }
+    .nav-cta {
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      padding: 0.55rem 1.4rem;
+      background: var(--moss);
+      color: var(--cream);
+      border: none; border-radius: 2px;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .nav-cta:hover { background: var(--earth); }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 4rem 6rem 7rem;
+      background: var(--white);
+      position: relative;
+    }
+    .hero-left::after {
+      content: '';
+      position: absolute; right: 0; top: 10%; bottom: 10%;
+      width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--straw), transparent);
+    }
+    .hero-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      color: var(--wheat);
+      text-transform: uppercase;
+      margin-bottom: 1.8rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .hero-tag::before {
+      content: '';
+      display: block; width: 2rem; height: 1px;
+      background: var(--wheat);
+    }
+    .hero-h1 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 3.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--earth);
+      margin-bottom: 0.3rem;
+    }
+    .hero-h1 em {
+      font-style: normal;
+      color: var(--sage);
+    }
+    .hero-subtitle {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--clay);
+      margin-bottom: 2rem;
+      letter-spacing: 0.04em;
+    }
+    .hero-desc {
+      font-size: 0.92rem;
+      line-height: 1.9;
+      color: #5a4235;
+      max-width: 28rem;
+      margin-bottom: 3rem;
+    }
+    .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 0.85rem 2.2rem;
+      background: var(--moss);
+      color: var(--cream);
+      border: none; border-radius: 2px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--earth); transform: translateY(-2px); }
+    .btn-secondary {
+      padding: 0.85rem 2.2rem;
+      background: transparent;
+      color: var(--clay);
+      border: 1px solid var(--clay);
+      border-radius: 2px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      cursor: pointer;
+      transition: all 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: var(--straw); transform: translateY(-2px); }
+    .hero-right {
+      position: relative;
+      overflow: hidden;
+      background: var(--fog);
+    }
+    .hero-illustration {
+      width: 100%; height: 100%;
+      display: block;
+    }
+
+    /* ── Numbers strip ── */
+    .numbers-strip {
+      background: var(--moss);
+      padding: 3rem 7rem;
+      display: flex; gap: 0; justify-content: space-between;
+    }
+    .num-item {
+      text-align: center;
+      flex: 1;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      padding: 0 2rem;
+    }
+    .num-item:last-child { border-right: none; }
+    .num-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: var(--straw);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+    .num-label {
+      font-size: 0.78rem;
+      letter-spacing: 0.15em;
+      color: rgba(255,255,255,0.65);
+    }
+
+    /* ── Story ── */
+    .story {
+      padding: 8rem 7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+    .story-visual { position: relative; }
+    .story-frame {
+      width: 100%; aspect-ratio: 4/5;
+      background: var(--fog);
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .story-deco {
+      position: absolute;
+      bottom: -2rem; right: -2rem;
+      width: 60%; aspect-ratio: 1;
+      background: var(--straw);
+      border-radius: 2px;
+      z-index: -1;
+    }
+    .section-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--wheat);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .section-tag::before {
+      content: '';
+      display: block; width: 1.5rem; height: 1px;
+      background: var(--wheat);
+    }
+    .story-h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--earth);
+      margin-bottom: 1.5rem;
+    }
+    .story-p {
+      font-size: 0.9rem;
+      line-height: 2;
+      color: #5a4235;
+      margin-bottom: 1.2rem;
+    }
+    .story-quote {
+      margin: 2rem 0;
+      padding: 1.2rem 1.5rem;
+      border-left: 3px solid var(--sage);
+      background: var(--fog);
+    }
+    .story-quote p {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--moss);
+      line-height: 1.8;
+    }
+
+    /* ── Products ── */
+    .products {
+      padding: 7rem 7rem;
+      background: var(--cream);
+    }
+    .products-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--earth);
+      margin-bottom: 0.8rem;
+    }
+    .section-sub {
+      font-size: 0.88rem;
+      color: var(--clay);
+      letter-spacing: 0.06em;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(61,43,31,0.12);
+    }
+    .product-img {
+      width: 100%; aspect-ratio: 4/3;
+      display: block;
+      object-fit: cover;
+    }
+    .product-body { padding: 1.4rem 1.6rem 1.8rem; }
+    .product-season {
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      color: var(--wheat);
+      margin-bottom: 0.5rem;
+    }
+    .product-name {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--earth);
+      margin-bottom: 0.6rem;
+    }
+    .product-desc {
+      font-size: 0.82rem;
+      line-height: 1.8;
+      color: var(--clay);
+    }
+    .product-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.3rem 0.8rem;
+      background: var(--fog);
+      color: var(--moss);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      border-radius: 1px;
+    }
+
+    /* ── Experience ── */
+    .experience {
+      padding: 8rem 7rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .exp-left .section-tag { margin-bottom: 1.5rem; }
+    .exp-h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--earth);
+      margin-bottom: 1.5rem;
+    }
+    .exp-p {
+      font-size: 0.88rem;
+      line-height: 2;
+      color: var(--clay);
+      margin-bottom: 2rem;
+    }
+    .exp-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+    .exp-item {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.2rem 1.4rem;
+      background: var(--fog);
+      border-radius: 2px;
+      border-left: 3px solid var(--sage);
+    }
+    .exp-icon {
+      width: 2.5rem; height: 2.5rem;
+      background: var(--sage);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+    .exp-item-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--earth);
+      margin-bottom: 0.3rem;
+    }
+    .exp-item-desc {
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: var(--clay);
+    }
+    .exp-right {
+      position: relative;
+      padding-top: 3rem;
+    }
+    .exp-calendar {
+      background: var(--white);
+      border: 1px solid var(--straw);
+      border-radius: 2px;
+      padding: 2rem;
+      box-shadow: 0 4px 20px rgba(61,43,31,0.06);
+    }
+    .cal-title {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--earth);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--straw);
+      padding-bottom: 1rem;
+    }
+    .cal-months { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.5rem; }
+    .cal-month {
+      text-align: center;
+      padding: 0.5rem 0.2rem;
+      border-radius: 1px;
+      font-size: 0.75rem;
+      color: var(--clay);
+    }
+    .cal-month.active {
+      background: var(--sage);
+      color: white;
+    }
+    .cal-month.partial {
+      background: var(--straw);
+      color: var(--earth);
+    }
+    .cal-crops { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .cal-crop-row { display: flex; align-items: center; gap: 0.8rem; }
+    .crop-dot {
+      width: 0.5rem; height: 0.5rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .crop-label { font-size: 0.78rem; color: var(--earth); flex: 0 0 4rem; }
+    .crop-bar-wrap { flex: 1; height: 6px; background: var(--fog); border-radius: 3px; overflow: hidden; }
+    .crop-bar { height: 100%; border-radius: 3px; }
+
+    /* ── Visit ── */
+    .visit {
+      padding: 7rem 7rem;
+      background: var(--earth);
+      color: var(--cream);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .visit-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--wheat);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .visit-tag::before {
+      content: '';
+      display: block; width: 1.5rem; height: 1px;
+      background: var(--wheat);
+    }
+    .visit-h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--straw);
+      margin-bottom: 1.5rem;
+    }
+    .visit-p {
+      font-size: 0.88rem;
+      line-height: 2;
+      color: rgba(232,213,160,0.75);
+      margin-bottom: 2.5rem;
+    }
+    .info-cards { display: flex; flex-direction: column; gap: 1rem; }
+    .info-card {
+      display: flex; gap: 1.2rem; align-items: flex-start;
+      padding: 1rem 1.2rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 2px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+    .info-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .info-card-title {
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      color: var(--wheat);
+      margin-bottom: 0.3rem;
+    }
+    .info-card-text {
+      font-size: 0.85rem;
+      color: var(--straw);
+      line-height: 1.7;
+    }
+    .visit-map {
+      background: var(--fog);
+      border-radius: 2px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 1rem;
+    }
+    .map-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.8rem;
+    }
+
+    /* ── CTA Section ── */
+    .cta-section {
+      padding: 8rem 7rem;
+      text-align: center;
+      background: var(--fog);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-section::before {
+      content: '耜稷';
+      position: absolute;
+      font-family: 'Noto Serif TC', serif;
+      font-size: 20rem;
+      font-weight: 700;
+      color: rgba(107,127,94,0.05);
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .cta-tag {
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      color: var(--wheat);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex; align-items: center; justify-content: center; gap: 0.8rem;
+    }
+    .cta-tag::before, .cta-tag::after {
+      content: '';
+      display: block; width: 2rem; height: 1px;
+      background: var(--wheat);
+    }
+    .cta-h2 {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--earth);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+    .cta-p {
+      font-size: 0.92rem;
+      color: var(--clay);
+      line-height: 1.9;
+      max-width: 36rem;
+      margin: 0 auto 3rem;
+    }
+    .cta-form {
+      display: flex;
+      gap: 0.8rem;
+      max-width: 26rem;
+      margin: 0 auto 1.5rem;
+    }
+    .cta-input {
+      flex: 1;
+      padding: 0.85rem 1.2rem;
+      background: var(--white);
+      border: 1px solid var(--straw);
+      border-radius: 2px;
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 0.85rem;
+      color: var(--earth);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .cta-input::placeholder { color: rgba(122,79,53,0.4); }
+    .cta-input:focus { border-color: var(--sage); }
+    .cta-note {
+      font-size: 0.75rem;
+      color: var(--clay);
+      opacity: 0.6;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--earth);
+      padding: 3rem 7rem;
+      display: flex;
+      align-items: center; justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-brand {
+      font-family: 'Noto Serif TC', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--straw);
+      letter-spacing: 0.12em;
+    }
+    .footer-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: rgba(232,213,160,0.55);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--straw); }
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(232,213,160,0.35);
+      letter-spacing: 0.06em;
+    }
+
+    /* ── Animations ── */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-tag  { animation: fadeInUp 0.7s ease both; animation-delay: 0.1s; }
+    .hero-h1   { animation: fadeInUp 0.7s ease both; animation-delay: 0.25s; }
+    .hero-subtitle { animation: fadeInUp 0.7s ease both; animation-delay: 0.35s; }
+    .hero-desc { animation: fadeInUp 0.7s ease both; animation-delay: 0.45s; }
+    .hero-buttons { animation: fadeInUp 0.7s ease both; animation-delay: 0.55s; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 4rem 1.5rem 3rem; }
+      .hero-right { min-height: 280px; }
+      .numbers-strip { padding: 2.5rem 1.5rem; flex-wrap: wrap; gap: 1.5rem; }
+      .num-item { border-right: none; min-width: 45%; }
+      .story, .experience, .visit { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2.5rem; }
+      .products { padding: 4rem 1.5rem; }
+      .products-grid { grid-template-columns: 1fr; }
+      .hero-h1 { font-size: 2.6rem; }
+      .cta-section { padding: 5rem 1.5rem; }
+      .cta-form { flex-direction: column; }
+      footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Nav -->
+<nav>
+  <a class="nav-logo" href="#">耜稷<span>生活農園</span></a>
+  <ul class="nav-links">
+    <li><a href="#story">農園故事</a></li>
+    <li><a href="#products">當季作物</a></li>
+    <li><a href="#experience">體驗活動</a></li>
+    <li><a href="#visit">交通資訊</a></li>
+  </ul>
+  <a href="#subscribe" class="nav-cta">訂閱農園通訊</a>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-tag">台東．鹿野鄉 × 自然農法</p>
+    <h1 class="hero-h1">耜稷<br/><em>生活農園</em></h1>
+    <p class="hero-subtitle">Where the soil speaks, we listen.</p>
+    <p class="hero-desc">
+      耜，古老的農具；稷，先民的主糧。<br/>
+      在花東縱谷最溫柔的一隅，<br/>
+      我們以自然農法耕耘，讓土地說話，<br/>
+      把每一個節氣的滋味，還給你的餐桌。
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary">探索當季作物</a>
+      <a href="#experience" class="btn-secondary">預約體驗活動</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg class="hero-illustration" viewBox="0 0 680 700" xmlns="http://www.w3.org/2000/svg">
+      <!-- Sky gradient -->
+      <rect width="680" height="700" fill="#e8eeec"/>
+      <!-- Mountains far -->
+      <path d="M0 380 L120 220 L240 310 L360 180 L480 270 L600 200 L680 250 L680 700 L0 700Z" fill="#c4d5c0" opacity="0.5"/>
+      <!-- Mountains mid -->
+      <path d="M0 440 L80 310 L180 370 L280 270 L400 340 L500 280 L600 330 L680 300 L680 700 L0 700Z" fill="#9bb893" opacity="0.65"/>
+      <!-- Rice fields terraces -->
+      <path d="M0 520 Q170 490 340 510 Q510 530 680 500 L680 700 L0 700Z" fill="#7a9e6e"/>
+      <path d="M0 560 Q170 535 340 550 Q510 565 680 540 L680 700 L0 700Z" fill="#6b8f60"/>
+      <path d="M0 600 Q170 575 340 590 Q510 605 680 580 L680 700 L0 700Z" fill="#5a7d50"/>
+      <path d="M0 635 Q170 615 340 625 Q510 635 680 620 L680 700 L0 700Z" fill="#4a6a42"/>
+      <!-- Sun / moon circle -->
+      <circle cx="520" cy="130" r="60" fill="#e8d5a0" opacity="0.6"/>
+      <circle cx="520" cy="130" r="48" fill="#c4924a" opacity="0.35"/>
+      <!-- Hot air balloon -->
+      <ellipse cx="160" cy="220" rx="52" ry="64" fill="#c4924a" opacity="0.85"/>
+      <ellipse cx="160" cy="220" rx="52" ry="64" fill="none" stroke="#7a4f35" stroke-width="0.5" opacity="0.4"/>
+      <!-- Balloon stripes -->
+      <path d="M108 220 Q160 180 212 220" stroke="#7a4f35" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M110 240 Q160 200 210 240" stroke="#7a4f35" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <path d="M116 260 Q160 225 204 260" stroke="#7a4f35" stroke-width="0.8" fill="none" opacity="0.4"/>
+      <!-- Balloon basket -->
+      <rect x="147" y="282" width="26" height="16" rx="2" fill="#7a4f35" opacity="0.85"/>
+      <line x1="148" y1="282" x2="138" y2="270" stroke="#7a4f35" stroke-width="1" opacity="0.6"/>
+      <line x1="172" y1="282" x2="182" y2="270" stroke="#7a4f35" stroke-width="1" opacity="0.6"/>
+      <!-- Trees -->
+      <g opacity="0.75">
+        <!-- Tree 1 -->
+        <rect x="54" y="460" width="8" height="60" fill="#5a4235"/>
+        <ellipse cx="58" cy="450" rx="22" ry="28" fill="#4a6a42"/>
+        <!-- Tree 2 -->
+        <rect x="86" y="470" width="6" height="50" fill="#5a4235"/>
+        <ellipse cx="89" cy="460" rx="16" ry="22" fill="#5a7d50"/>
+        <!-- Tree 3 -->
+        <rect x="610" y="455" width="8" height="65" fill="#5a4235"/>
+        <ellipse cx="614" cy="445" rx="24" ry="30" fill="#4a6a42"/>
+        <!-- Tree 4 -->
+        <rect x="638" y="468" width="6" height="52" fill="#5a4235"/>
+        <ellipse cx="641" cy="458" rx="17" ry="23" fill="#5a7d50"/>
+      </g>
+      <!-- Rice stalk decorations -->
+      <g opacity="0.5">
+        <line x1="340" y1="580" x2="338" y2="540" stroke="#3f5038" stroke-width="1.5"/>
+        <ellipse cx="338" cy="537" rx="4" ry="8" fill="#6b7f5e" transform="rotate(-15 338 537)"/>
+        <line x1="355" y1="575" x2="353" y2="535" stroke="#3f5038" stroke-width="1.5"/>
+        <ellipse cx="353" cy="532" rx="4" ry="8" fill="#6b7f5e" transform="rotate(10 353 532)"/>
+        <line x1="370" y1="580" x2="368" y2="545" stroke="#3f5038" stroke-width="1.5"/>
+        <ellipse cx="368" cy="542" rx="4" ry="8" fill="#6b7f5e" transform="rotate(-8 368 542)"/>
+        <line x1="320" y1="578" x2="318" y2="542" stroke="#3f5038" stroke-width="1.5"/>
+        <ellipse cx="318" cy="539" rx="4" ry="8" fill="#6b7f5e" transform="rotate(12 318 539)"/>
+      </g>
+      <!-- Location label -->
+      <rect x="30" y="40" width="180" height="38" rx="2" fill="rgba(61,43,31,0.65)"/>
+      <text x="46" y="62" font-family="Noto Serif TC, serif" font-size="13" fill="#e8d5a0" letter-spacing="2">台東縣 鹿野鄉</text>
+      <!-- Elevation label -->
+      <rect x="30" y="88" width="120" height="28" rx="2" fill="rgba(107,127,94,0.6)"/>
+      <text x="46" y="106" font-family="Noto Sans TC, sans-serif" font-size="11" fill="white" letter-spacing="1">海拔 200–400 m</text>
+      <!-- Decorative border dots -->
+      <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+        <circle cx="1" cy="1" r="1" fill="rgba(107,127,94,0.25)"/>
+      </pattern>
+      <rect x="0" y="0" width="680" height="700" fill="url(#dots)" pointer-events="none"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Numbers strip -->
+<div class="numbers-strip">
+  <div class="num-item">
+    <span class="num-big">12+</span>
+    <span class="num-label">年自然農耕歲月</span>
+  </div>
+  <div class="num-item">
+    <span class="num-big">3 公頃</span>
+    <span class="num-label">友善耕作面積</span>
+  </div>
+  <div class="num-item">
+    <span class="num-big">20+</span>
+    <span class="num-label">品種作物多樣</span>
+  </div>
+  <div class="num-item">
+    <span class="num-big">全年</span>
+    <span class="num-label">開放預約體驗</span>
+  </div>
+</div>
+
+<!-- Story -->
+<section class="story" id="story">
+  <div class="story-visual">
+    <div class="story-frame">
+      <svg width="100%" height="100%" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+        <rect width="400" height="500" fill="#d4c9ad"/>
+        <!-- Stylized landscape with farming scene -->
+        <rect y="300" width="400" height="200" fill="#8fa37d"/>
+        <rect y="360" width="400" height="140" fill="#7a9060"/>
+        <rect y="420" width="400" height="80" fill="#6b7f52"/>
+        <!-- Sky -->
+        <rect width="400" height="300" fill="#c8d8d4"/>
+        <!-- Soft clouds -->
+        <ellipse cx="80" cy="80" rx="50" ry="25" fill="white" opacity="0.5"/>
+        <ellipse cx="110" cy="70" rx="35" ry="20" fill="white" opacity="0.4"/>
+        <ellipse cx="300" cy="100" rx="45" ry="22" fill="white" opacity="0.4"/>
+        <!-- Mountain silhouette -->
+        <path d="M0 280 L80 160 L160 220 L240 140 L320 200 L400 170 L400 300 L0 300Z" fill="#9fb89a" opacity="0.7"/>
+        <!-- Person farming -->
+        <circle cx="200" cy="315" r="12" fill="#7a4f35"/>
+        <rect x="196" y="327" width="8" height="20" fill="#5a4235" rx="1"/>
+        <!-- Farming tool -->
+        <line x1="210" y1="315" x2="230" y2="340" stroke="#5a4235" stroke-width="2"/>
+        <!-- Fields rows -->
+        <g opacity="0.6">
+          <path d="M20 380 Q200 360 380 375" stroke="#5a7d50" stroke-width="2" fill="none"/>
+          <path d="M20 400 Q200 380 380 395" stroke="#5a7d50" stroke-width="2" fill="none"/>
+          <path d="M20 420 Q200 400 380 415" stroke="#4a6a42" stroke-width="2" fill="none"/>
+          <path d="M20 440 Q200 420 380 435" stroke="#4a6a42" stroke-width="2" fill="none"/>
+        </g>
+        <!-- Frame ornament -->
+        <rect x="10" y="10" width="380" height="480" fill="none" stroke="rgba(61,43,31,0.15)" stroke-width="1"/>
+        <rect x="16" y="16" width="368" height="468" fill="none" stroke="rgba(61,43,31,0.08)" stroke-width="0.5"/>
+        <!-- Text overlay -->
+        <rect x="20" y="430" width="200" height="55" rx="1" fill="rgba(61,43,31,0.55)"/>
+        <text x="36" y="455" font-family="Noto Serif TC, serif" font-size="12" fill="#e8d5a0" letter-spacing="2">耕者，有其田</text>
+        <text x="36" y="476" font-family="Noto Sans TC, sans-serif" font-size="10" fill="rgba(232,213,160,0.65)" letter-spacing="1">鹿野 × 花東縱谷</text>
+      </svg>
+    </div>
+    <div class="story-deco"></div>
+  </div>
+  <div class="story-text">
+    <p class="section-tag">農園故事</p>
+    <h2 class="story-h2">從一粒種子<br/>出發的生活哲學</h2>
+    <p class="story-p">
+      「耜」是古人翻土的農具，「稷」是五穀之首。我們借用這兩個文字，為農園命名，也為自己的生活態度命名。
+    </p>
+    <p class="story-p">
+      十二年前，創辦人從都市回到台東鹿野，在花東縱谷的河階台地上，找到了這片土地。鹿野的陽光充沛、晝夜溫差大，加上潔淨的山泉水，是友善農耕的天堂。
+    </p>
+    <div class="story-quote">
+      <p>「我們不是在和土地做生意，<br/>我們是在和土地一起生活。」</p>
+    </div>
+    <p class="story-p">
+      農園堅持不施農藥、不用化肥，以草生栽培、輪作休耕維持土壤活力。作物隨季節輪替，每一口都是大地最誠實的表達。
+    </p>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="products" id="products">
+  <div class="products-head">
+    <p class="section-tag" style="justify-content: center; margin-bottom: 0.8rem;">
+      <span style="display:inline-flex; align-items:center; gap:0.8rem;">
+        <span style="display:block; width:1.5rem; height:1px; background:var(--wheat);"></span>
+        當季作物
+        <span style="display:block; width:1.5rem; height:1px; background:var(--wheat);"></span>
+      </span>
+    </p>
+    <h2 class="section-h2">來自土地的真實滋味</h2>
+    <p class="section-sub">每個節氣都有專屬的美味，讓時令主導你的餐桌</p>
+  </div>
+  <div class="products-grid">
+    <!-- Card 1: Red Oolong -->
+    <div class="product-card">
+      <svg class="product-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="300" fill="#c8a876"/>
+        <rect width="400" height="300" fill="url(#tea-bg)"/>
+        <!-- Tea field rows -->
+        <defs>
+          <pattern id="tea-bg" x="0" y="0" width="40" height="20" patternUnits="userSpaceOnUse">
+            <path d="M0 18 Q20 8 40 18" stroke="rgba(61,43,31,0.1)" stroke-width="1" fill="none"/>
+          </pattern>
+        </defs>
+        <path d="M0 200 Q100 170 200 185 Q300 200 400 175 L400 300 L0 300Z" fill="#9b6b30" opacity="0.8"/>
+        <path d="M0 230 Q100 205 200 215 Q300 225 400 205 L400 300 L0 300Z" fill="#7a4f22" opacity="0.7"/>
+        <!-- Tea cup illustration -->
+        <ellipse cx="200" cy="130" rx="55" ry="15" fill="rgba(255,255,255,0.3)"/>
+        <path d="M145 130 Q148 175 160 185 Q200 195 240 185 Q252 175 255 130" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+        <ellipse cx="200" cy="133" rx="50" ry="10" fill="#c47a30" opacity="0.7"/>
+        <!-- Steam -->
+        <path d="M180 115 Q185 100 180 85" stroke="white" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M200 110 Q205 95 200 80" stroke="white" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <path d="M220 115 Q225 100 220 85" stroke="white" stroke-width="1.5" fill="none" opacity="0.5" stroke-linecap="round"/>
+        <!-- Label overlay -->
+        <rect width="400" height="300" fill="rgba(120,65,20,0.15)"/>
+      </svg>
+      <div class="product-body">
+        <p class="product-season">全年採製 · 春冬為佳</p>
+        <h3 class="product-name">鹿野紅烏龍</h3>
+        <p class="product-desc">台東鹿野原鄉代表茶款，以獨特蜜香著稱。農園自種自製，從茶園到茶杯，完整控管每一個環節，呈現花東縱谷的風土韻味。</p>
+        <span class="product-tag">自然農法 · 無農藥</span>
+      </div>
+    </div>
+    <!-- Card 2: Passion Fruit -->
+    <div class="product-card">
+      <svg class="product-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="300" fill="#d4a862"/>
+        <!-- Tropical feel -->
+        <path d="M0 180 Q200 150 400 165 L400 300 L0 300Z" fill="#8b5e2a" opacity="0.7"/>
+        <!-- Passion fruit -->
+        <circle cx="160" cy="110" r="55" fill="#c4784a"/>
+        <circle cx="160" cy="110" r="55" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="2"/>
+        <!-- Cut inside -->
+        <circle cx="160" cy="110" r="42" fill="#e8c87a"/>
+        <circle cx="160" cy="110" r="30" fill="#d4a030"/>
+        <!-- Seeds -->
+        <g fill="#5a3010" opacity="0.8">
+          <ellipse cx="160" cy="95" rx="4" ry="6" transform="rotate(-20 160 95)"/>
+          <ellipse cx="175" cy="108" rx="4" ry="6" transform="rotate(60 175 108)"/>
+          <ellipse cx="168" cy="125" rx="4" ry="6" transform="rotate(10 168 125)"/>
+          <ellipse cx="148" cy="123" rx="4" ry="6" transform="rotate(-50 148 123)"/>
+          <ellipse cx="143" cy="107" rx="4" ry="6" transform="rotate(80 143 107)"/>
+        </g>
+        <!-- Whole fruit next to it -->
+        <circle cx="270" cy="120" r="45" fill="#a85030"/>
+        <circle cx="270" cy="120" r="45" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+        <rect width="400" height="300" fill="rgba(150,80,20,0.12)"/>
+      </svg>
+      <div class="product-body">
+        <p class="product-season">夏秋盛產 · 5–11月</p>
+        <h3 class="product-name">有機百香果</h3>
+        <p class="product-desc">鹿野豐沛的陽光孕育出酸甜飽滿的百香果，香氣濃郁令人難忘。每顆果實飽含花東縱谷的陽光能量，鮮摘現食最美味。</p>
+        <span class="product-tag">有機認證 · 現採現摘</span>
+      </div>
+    </div>
+    <!-- Card 3: Rice -->
+    <div class="product-card">
+      <svg class="product-img" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="400" height="300" fill="#c8d89a"/>
+        <!-- Sky -->
+        <rect width="400" height="160" fill="#b8cfc8"/>
+        <!-- Field golden -->
+        <path d="M0 160 Q200 140 400 155 L400 300 L0 300Z" fill="#c8a84a"/>
+        <path d="M0 200 Q200 180 400 195 L400 300 L0 300Z" fill="#b89038"/>
+        <path d="M0 240 Q200 220 400 235 L400 300 L0 300Z" fill="#a07828"/>
+        <!-- Rice stalks -->
+        <g opacity="0.7">
+          <line x1="60" y1="155" x2="58" y2="120" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="57" cy="116" rx="5" ry="10" fill="#8a7030" transform="rotate(-10 57 116)"/>
+          <line x1="90" y1="150" x2="88" y2="118" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="87" cy="114" rx="5" ry="10" fill="#8a7030" transform="rotate(8 87 114)"/>
+          <line x1="120" y1="153" x2="118" y2="118" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="117" cy="114" rx="5" ry="10" fill="#8a7030" transform="rotate(-5 117 114)"/>
+          <line x1="280" y1="153" x2="278" y2="120" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="277" cy="116" rx="5" ry="10" fill="#8a7030" transform="rotate(12 277 116)"/>
+          <line x1="310" y1="150" x2="308" y2="118" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="307" cy="114" rx="5" ry="10" fill="#8a7030" transform="rotate(-8 307 114)"/>
+          <line x1="340" y1="152" x2="338" y2="119" stroke="#7a6020" stroke-width="1.5"/>
+          <ellipse cx="337" cy="115" rx="5" ry="10" fill="#8a7030" transform="rotate(6 337 115)"/>
+        </g>
+        <!-- Soft overlay -->
+        <rect width="400" height="300" fill="rgba(180,150,40,0.1)"/>
+      </svg>
+      <div class="product-body">
+        <p class="product-season">秋季收穫 · 10–11月</p>
+        <h3 class="product-name">花東縱谷米</h3>
+        <p class="product-desc">以古法耕作的台梗九號，在鹿野河階台地生長。不施化肥、配合自然水源灌溉，米粒飽滿晶瑩，帶有淡淡的稻香甘甜。</p>
+        <span class="product-tag">傳統農法 · 低碳耕作</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Experience -->
+<section class="experience" id="experience">
+  <div class="exp-left">
+    <p class="section-tag">體驗活動</p>
+    <h2 class="exp-h2">親手感受<br/>土地的溫度</h2>
+    <p class="exp-p">
+      農園全年開放預約，提供各種深度的農村體驗。無論是半日的茶田漫步，或三天兩夜的農耕生活，都能在鹿野的山水之間，找到久違的慢節奏。
+    </p>
+    <ul class="exp-list">
+      <li class="exp-item">
+        <div class="exp-icon">🌿</div>
+        <div>
+          <p class="exp-item-title">採茶製茶體驗</p>
+          <p class="exp-item-desc">親手採摘鮮茶葉，跟著老師學習萎凋、揉捻、烘焙，帶走一罐屬於你的手工紅烏龍。每梯次限 6 人，需提前預約。</p>
+        </div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-icon">🌾</div>
+        <div>
+          <p class="exp-item-title">稻田插秧割稻</p>
+          <p class="exp-item-desc">依節氣開放插秧（3–4 月）與割稻（10–11 月）體驗，體驗農夫彎腰的辛勤與豐收的喜悅，適合親子同樂。</p>
+        </div>
+      </li>
+      <li class="exp-item">
+        <div class="exp-icon">🏡</div>
+        <div>
+          <p class="exp-item-title">農夫的一天住宿</p>
+          <p class="exp-item-desc">入住農園木屋，隨農夫晨起巡田、享用農家早餐，傍晚在茶園看夕陽，感受花東縱谷最純粹的生活步調。</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="exp-right">
+    <div class="exp-calendar">
+      <p class="cal-title">🌱 農園歲時曆</p>
+      <div class="cal-months">
+        <div class="cal-month partial">一月</div>
+        <div class="cal-month partial">二月</div>
+        <div class="cal-month active">三月</div>
+        <div class="cal-month active">四月</div>
+        <div class="cal-month active">五月</div>
+        <div class="cal-month active">六月</div>
+        <div class="cal-month active">七月</div>
+        <div class="cal-month active">八月</div>
+        <div class="cal-month active">九月</div>
+        <div class="cal-month active">十月</div>
+        <div class="cal-month active">十一月</div>
+        <div class="cal-month partial">十二月</div>
+      </div>
+      <div class="cal-crops">
+        <div class="cal-crop-row">
+          <div class="crop-dot" style="background:#c4924a;"></div>
+          <span class="crop-label">紅烏龍</span>
+          <div class="crop-bar-wrap">
+            <div class="crop-bar" style="width:90%; background:#c4924a;"></div>
+          </div>
+        </div>
+        <div class="cal-crop-row">
+          <div class="crop-dot" style="background:#c4784a;"></div>
+          <span class="crop-label">百香果</span>
+          <div class="crop-bar-wrap">
+            <div class="crop-bar" style="width:58%; margin-left:25%; background:#c4784a;"></div>
+          </div>
+        </div>
+        <div class="cal-crop-row">
+          <div class="crop-dot" style="background:#9bb87a;"></div>
+          <span class="crop-label">縱谷米</span>
+          <div class="crop-bar-wrap">
+            <div class="crop-bar" style="width:25%; margin-left:60%; background:#9bb87a;"></div>
+          </div>
+        </div>
+        <div class="cal-crop-row">
+          <div class="crop-dot" style="background:#6b7f5e;"></div>
+          <span class="crop-label">當季蔬菜</span>
+          <div class="crop-bar-wrap">
+            <div class="crop-bar" style="width:75%; background:#6b7f5e;"></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--straw); font-size:0.78rem; color:var(--clay); line-height:1.8;">
+        ● 綠色 = 採收高峰期 ● 淺色 = 種植/過渡期
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Visit -->
+<section class="visit" id="visit">
+  <div class="visit-left">
+    <p class="visit-tag">交通與資訊</p>
+    <h2 class="visit-h2">來鹿野<br/>找我們</h2>
+    <p class="visit-p">
+      農園位於台東縣鹿野鄉龍田村，沿花東縱谷台九線南下，過武陵綠色隧道後不遠。歡迎預約拜訪，我們會親自為您導覽。
+    </p>
+    <div class="info-cards">
+      <div class="info-card">
+        <span class="info-icon">📍</span>
+        <div>
+          <p class="info-card-title">農園地址</p>
+          <p class="info-card-text">台東縣鹿野鄉龍田村<br/>（確切地址預約後提供）</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">🕐</span>
+        <div>
+          <p class="info-card-title">開放時間</p>
+          <p class="info-card-text">週三至週日 08:00–17:00<br/>體驗活動需事先預約</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">🚂</span>
+        <div>
+          <p class="info-card-title">交通建議</p>
+          <p class="info-card-text">搭台鐵至瑞源站或鹿野站，<br/>提前聯絡可安排接送服務</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">📱</span>
+        <div>
+          <p class="info-card-title">聯絡方式</p>
+          <p class="info-card-text">LINE 官方帳號 / Facebook 私訊<br/>@耜稷生活農園</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="visit-map">
+    <svg width="100%" height="100%" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+      <!-- Map background -->
+      <rect width="400" height="400" fill="#dde8e0"/>
+      <!-- Topographic lines -->
+      <ellipse cx="200" cy="200" rx="180" ry="150" fill="none" stroke="rgba(107,127,94,0.25)" stroke-width="1"/>
+      <ellipse cx="200" cy="200" rx="150" ry="120" fill="none" stroke="rgba(107,127,94,0.3)" stroke-width="1"/>
+      <ellipse cx="200" cy="200" rx="120" ry="90" fill="none" stroke="rgba(107,127,94,0.35)" stroke-width="1"/>
+      <ellipse cx="200" cy="200" rx="90" ry="65" fill="none" stroke="rgba(107,127,94,0.4)" stroke-width="1"/>
+      <!-- Green patches (fields) -->
+      <rect x="80" y="150" width="60" height="50" rx="2" fill="rgba(107,127,94,0.3)"/>
+      <rect x="150" y="120" width="80" height="40" rx="2" fill="rgba(107,127,94,0.25)"/>
+      <rect x="240" y="160" width="70" height="60" rx="2" fill="rgba(107,127,94,0.3)"/>
+      <rect x="140" y="200" width="120" height="50" rx="2" fill="rgba(107,127,94,0.35)"/>
+      <!-- Road -->
+      <path d="M40 200 Q120 195 200 200 Q280 205 360 198" stroke="#c8b88a" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <path d="M40 200 Q120 195 200 200 Q280 205 360 198" stroke="rgba(255,255,255,0.5)" stroke-width="2" fill="none" stroke-linecap="round" stroke-dasharray="10 8"/>
+      <!-- Road label -->
+      <text x="180" y="215" font-family="Noto Sans TC, sans-serif" font-size="10" fill="rgba(61,43,31,0.6)" text-anchor="middle">台 9 線</text>
+      <!-- Location pin -->
+      <circle cx="200" cy="185" r="20" fill="rgba(63,80,56,0.15)"/>
+      <circle cx="200" cy="178" r="12" fill="#3f5038"/>
+      <path d="M200 178 m0 12 Q185 205 200 225 Q215 205 200 190" fill="#3f5038"/>
+      <circle cx="200" cy="178" r="5" fill="white"/>
+      <!-- Labels -->
+      <rect x="218" y="162" width="85" height="26" rx="2" fill="rgba(61,43,31,0.75)"/>
+      <text x="260" y="179" font-family="Noto Serif TC, serif" font-size="11" fill="#e8d5a0" text-anchor="middle" letter-spacing="1">耜稷生活農園</text>
+      <!-- Compass -->
+      <circle cx="350" cy="50" r="22" fill="rgba(255,255,255,0.6)" stroke="rgba(107,127,94,0.5)" stroke-width="1"/>
+      <text x="350" y="38" font-family="sans-serif" font-size="10" fill="#3f5038" text-anchor="middle" font-weight="bold">N</text>
+      <line x1="350" y1="42" x2="350" y2="60" stroke="#3f5038" stroke-width="1.5"/>
+      <polygon points="350,32 346,44 354,44" fill="#3f5038"/>
+      <!-- Scale -->
+      <rect x="30" y="365" width="60" height="3" rx="1" fill="rgba(61,43,31,0.4)"/>
+      <text x="60" y="380" font-family="sans-serif" font-size="9" fill="rgba(61,43,31,0.5)" text-anchor="middle">500 m</text>
+      <!-- Train station -->
+      <rect x="50" y="255" width="46" height="26" rx="2" fill="rgba(200,168,100,0.6)"/>
+      <text x="73" y="271" font-family="Noto Sans TC, sans-serif" font-size="9" fill="#5a4235" text-anchor="middle">鹿野車站</text>
+    </svg>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="subscribe">
+  <p class="cta-tag">保持聯繫</p>
+  <h2 class="cta-h2">訂閱農園通訊<br/>跟著節氣生活</h2>
+  <p class="cta-p">
+    每月一封手寫信，記錄農園裡正在發生的事：哪棵樹開花了、今年的百香果特別甜、下個月有什麼體驗活動開放預約。
+  </p>
+  <div class="cta-form">
+    <input class="cta-input" type="email" placeholder="你的電子信箱" />
+    <a href="#" class="btn-primary" style="white-space:nowrap;">訂閱</a>
+  </div>
+  <p class="cta-note">不會濫發信件，只有真正值得分享的農園故事</p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <span class="footer-brand">耜稷生活農園</span>
+  <ul class="footer-links">
+    <li><a href="#story">農園故事</a></li>
+    <li><a href="#products">當季作物</a></li>
+    <li><a href="#experience">體驗活動</a></li>
+    <li><a href="#visit">聯絡我們</a></li>
+  </ul>
+  <span class="footer-copy">© 2025 耜稷生活農園 · 台東縣鹿野鄉</span>
+</footer>
+
+<script>
+// Smooth scroll for nav links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const el = document.querySelector(id);
+    if (el) {
+      e.preventDefault();
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Scroll fade-in
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.product-card, .exp-item, .info-card, .story-quote, .num-item').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// CTA subscribe button
+const ctaBtn = document.querySelector('.cta-form .btn-primary');
+const ctaInput = document.querySelector('.cta-input');
+if (ctaBtn && ctaInput) {
+  ctaBtn.addEventListener('click', e => {
+    e.preventDefault();
+    const email = ctaInput.value.trim();
+    if (email && email.includes('@')) {
+      ctaBtn.textContent = '✓ 已訂閱';
+      ctaBtn.style.background = 'var(--sage)';
+      ctaInput.value = '';
+      ctaInput.placeholder = '感謝訂閱，期待與你分享農園故事 🌿';
+    } else {
+      ctaInput.style.borderColor = 'var(--wheat)';
+      ctaInput.focus();
+    }
+  });
+}
+</script>
+</body>
+</html>
